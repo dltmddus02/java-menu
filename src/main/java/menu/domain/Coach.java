@@ -13,6 +13,7 @@ public class Coach {
     public Coach(String name, String cannotEatMenus) {
         this.name = name;
         this.cannotEatMenus = parseMenu(cannotEatMenus);
+        recommendedMenus = new ArrayList<>();
     }
 
     public String getName() {
@@ -27,8 +28,8 @@ public class Coach {
         return recommendedMenus;
     }
 
-    public void setRecommendedMenus(List<String> recommendedMenus) {
-        this.recommendedMenus = recommendedMenus;
+    public void addRecommendedMenus(String menu) {
+        this.recommendedMenus.add(menu);
     }
 
     private List<String> parseMenu(String cannotEatMenu) {
@@ -40,4 +41,14 @@ public class Coach {
         }
         return List.of(cannotEatMenu);
     }
+
+    public boolean isDuplicateMenu(String input) {
+        return recommendedMenus.contains(input);
+    }
+
+    public boolean isCannotEatMenu(String input) {
+        return cannotEatMenus.contains(input);
+    }
+
+
 }
