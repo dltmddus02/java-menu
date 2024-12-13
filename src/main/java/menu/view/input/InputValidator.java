@@ -16,6 +16,14 @@ public class InputValidator {
         }
     }
 
+    public static void validateCannotEat(String input) {
+        if (input.contains(COMMA)) {
+            if (input.split(COMMA).length > 2) {
+                throw new InputException(InputErrorMessage.CANNOT_OVER_TWO_MENU);
+            }
+        }
+    }
+
     public static void validateNotNullOrEmpty(String input) {
         if (input == null || input.isBlank()) {
             throw new InputException(InputErrorMessage.INVALID_INPUT);

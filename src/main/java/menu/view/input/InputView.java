@@ -9,11 +9,11 @@ public class InputView {
         return coachName;
     }
 
-//    public static String inputCannotEat() {
-//        String cannotEat = Console.readLine();
-//        InputValidator.validateCannotEat(cannotEat);
-//        return cannotEat;
-//    }
+    public static String inputCannotEat() {
+        String cannotEat = Console.readLine();
+        InputValidator.validateCannotEat(cannotEat);
+        return cannotEat;
+    }
 //
 //    public static String inputRecommendationResult() {
 //        String recommendationResult = Console.readLine();

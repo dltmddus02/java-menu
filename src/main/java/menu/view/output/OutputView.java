@@ -1,5 +1,6 @@
 package menu.view.output;
 
+import static menu.view.output.OutputMessage.INPUT_CANNOT_EAT;
 import static menu.view.output.OutputMessage.INPUT_COACH_NAME;
 import static menu.view.output.OutputMessage.START_RECOMMENDATION;
 
@@ -11,4 +12,9 @@ public class OutputView {
     public static void printCoachName() {
         System.out.println(INPUT_COACH_NAME.getMessage());
     }
+
+    public static void printCannotEat() {
+        System.out.println(INPUT_CANNOT_EAT.getMessage());
+    }
+
 }
