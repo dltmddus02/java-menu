@@ -7,7 +7,6 @@ import menu.domain.Coach;
 import menu.domain.CoachRepository;
 import menu.service.RecommendateMenu;
 import menu.view.input.InputView;
-import menu.view.input.exception.InputErrorMessage;
 import menu.view.input.exception.InputException;
 import menu.view.output.OutputView;
 
@@ -36,14 +35,7 @@ public class MenuController {
     private String[] inputCoaches() {
         return retryOnInvalidInput(() -> {
             OutputView.printCoachName();
-            String[] coaches = InputView.inputCoachName().split(",");
-            for (String coach : coaches) {
-                if (coach.length() < 2 || coach.length() > 4) {
-                    throw new InputException(InputErrorMessage.INVALID_COACH_NAME_LENGTH);
-                }
-            }
-            return coaches;
-
+            return InputView.inputCoachName();
         });
     }
 

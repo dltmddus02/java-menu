@@ -3,10 +3,12 @@ package menu.view.input;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
-    public static String inputCoachName() {
+    private final static String COMMA = ",";
+
+    public static String[] inputCoachName() {
         String coachName = Console.readLine();
         InputValidator.validateCoachName(coachName);
-        return coachName;
+        return coachName.split(COMMA);
     }
 
     public static String inputCannotEat() {

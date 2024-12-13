@@ -14,6 +14,12 @@ public class InputValidator {
         if (input.split(COMMA).length < 2 || input.split(COMMA).length > 5) {
             throw new InputException(InputErrorMessage.INCORRECT_INPUT_FORMAT);
         }
+
+        for (String coach : input.split(COMMA)) {
+            if (coach.length() < 2 || coach.length() > 4) {
+                throw new InputException(InputErrorMessage.INVALID_COACH_NAME_LENGTH);
+            }
+        }
     }
 
     public static void validateCannotEat(String input) {
