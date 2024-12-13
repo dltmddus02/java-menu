@@ -14,10 +14,4 @@ public class InputView {
         InputValidator.validateCannotEat(cannotEat);
         return cannotEat;
     }
-//
-//    public static String inputRecommendationResult() {
-//        String recommendationResult = Console.readLine();
-//        InputValidator.validateRecommendationResult(recommendationResult);
-//        return recommendationResult;
-//    }
 }

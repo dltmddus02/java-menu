@@ -29,7 +29,6 @@ public enum Category {
                 .map(c -> c.categoryName)
                 .findFirst()
                 .orElse(null);
-//        return cate.get();
     }
 
     public static List<String> getMenusByCategoryName(String categoryName) {
@@ -38,15 +37,6 @@ public enum Category {
                 .map(c -> c.menus)
                 .findFirst()
                 .orElse(new ArrayList<>());
-//        return cate.get();
-    }
-
-    public List<String> getMenus() {
-        return menus;
-    }
-
-    public Integer getCategory() {
-        return category;
     }
 
     public static void validate(String menu) {
@@ -62,13 +52,6 @@ public enum Category {
         }
 
         validateExistMenu(menu);
-
-//        for (Category category : Category.values()) {
-//            if (category.menus.contains(menu)) {
-//                return;
-//            }
-//        }
-//        throw new InputException(NON_EXISTENT_MENU);
     }
 
     public static void validateExistMenu(String menu) {
@@ -80,14 +63,4 @@ public enum Category {
         throw new InputException(InputErrorMessage.NON_EXISTENT_MENU);
 
     }
-
-//    public static void validateExistMenu(String menu) {
-//        Optional<Category> menuOptional = Arrays.stream(Category.values())
-//                .filter(c -> c.menus.contains(menu))
-//                .findFirst();
-//
-//        if (menuOptional.isEmpty()) {
-//            throw new InputException(NON_EXISTENT_MENU);
-//        }
-//    }
 }

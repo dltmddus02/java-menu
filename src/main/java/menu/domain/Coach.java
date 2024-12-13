@@ -20,10 +20,6 @@ public class Coach {
         return name;
     }
 
-    public List<String> getCannotEatMenus() {
-        return cannotEatMenus;
-    }
-
     public List<String> getRecommendedMenus() {
         return recommendedMenus;
     }
