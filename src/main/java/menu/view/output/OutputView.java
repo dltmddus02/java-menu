@@ -4,6 +4,7 @@ import static menu.view.output.OutputMessage.FINISH_RECOMMENDATION;
 import static menu.view.output.OutputMessage.INPUT_CANNOT_EAT;
 import static menu.view.output.OutputMessage.INPUT_COACH_NAME;
 import static menu.view.output.OutputMessage.INPUT_RECOMMENDATION_RESULT;
+import static menu.view.output.OutputMessage.RECOMMENDATION_FORMAT;
 import static menu.view.output.OutputMessage.START_RECOMMENDATION;
 
 import java.util.List;
@@ -26,9 +27,10 @@ public class OutputView {
     public static void printRecommendationResult(List<String> categoryNames) {
         System.out.println(INPUT_RECOMMENDATION_RESULT.getMessage());
 
-        System.out.printf("[ 카테고리 | " + String.join(" | ", categoryNames) + " ]\n");
+        System.out.printf(RECOMMENDATION_FORMAT.getMessage(), "카테고리", String.join(" | ", categoryNames));
         for (Coach c : CoachRepository.coachs()) {
-            System.out.printf("[ " + c.getName() + " | " + String.join(" | ", c.getRecommendedMenus()) + " ]\n");
+            System.out.printf(RECOMMENDATION_FORMAT.getMessage(), c.getName(),
+                    String.join(" | ", c.getRecommendedMenus()));
         }
 
         System.out.println(FINISH_RECOMMENDATION.getMessage());
